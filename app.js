@@ -1,19 +1,21 @@
 
 
-let name = ["ibm", "bmw", "apple"]
-let tipo = [".com", ".net"]
+
 let adj = ["great", "pretty", "wonderfull"]
+let name = ["ibm", "bmw", "apple"]
+let tipo = [".com", ".net", "io"]
 
 
-function Generator(arrname, arrtipo, arradj) {
+function Generator(arradj, arrname, arrtipo, ) {
     let dominiosGenerados = [];
     //recorro el primer array name
-    arrname.forEach((elementName) => {
+    arradj.forEach((elementadj) => {
         //recorro el segundo array tipo
-        arrtipo.forEach((elementoTipo) => {
-            arradj.forEach((elementadj) => {
+        arrname.forEach((elementName) => {
+            //recorro el segundo array tipo
+            arrtipo.forEach((elementoTipo) => {
                 //concateno elementos
-                let str = elementName + elementoTipo + elementadj;
+                let str = elementadj + elementName + elementoTipo;
                 dominiosGenerados.push(str);//adiciono dominios a array
             })
         })
@@ -21,4 +23,6 @@ function Generator(arrname, arrtipo, arradj) {
     return dominiosGenerados;
 }
 
-console.log("Dominios-->", Generator(name, tipo, adj));
+console.log("Dominios-->", Generator(adj, name, tipo));
+
+
